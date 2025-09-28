@@ -164,7 +164,7 @@ jobs:
       
       - name: "🔑 Generate Farcaster account association"
         env:
-            NEXT_PUBLIC_APP_DOMAIN: ${{ steps.deploy-temp.outputs.production_domain }}
+            NEXT_PUBLIC_APP_DOMAIN: ${{ steps.cleanup-projects.outputs.existing_project_name }}.vercel.app
             FARCASTER_FID: ${{ secrets.FARCASTER_FID }}
             FARCASTER_CUSTODY_ADDRESS: ${{ secrets.FARCASTER_CUSTODY_ADDRESS }}
             FARCASTER_CUSTODY_PRIVATE_KEY: ${{ secrets.FARCASTER_CUSTODY_PRIVATE_KEY }}
@@ -174,12 +174,8 @@ jobs:
       - name: "🎨 Generate SVG icons with gradients"
         run: |
           # Export domain URLs for SVG icon generation
-          PRODUCTION_DOMAIN="${{ steps.deploy-temp.outputs.production_domain }}"
-          export SCREENSHOT_URL="https://${PRODUCTION_DOMAIN}"
-          export NEXT_PUBLIC_APP_DOMAIN="$PRODUCTION_DOMAIN"
-          
+            
           echo "🎨 Generating SVG icons with gradient colors"
-          echo "Using production domain: $PRODUCTION_DOMAIN"
           node scripts/generate-svg-icons-with-gradient.js
 
 
