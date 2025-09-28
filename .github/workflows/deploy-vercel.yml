@@ -172,6 +172,8 @@ jobs:
             echo "🔧 Generating Farcaster account association for domain: $NEXT_PUBLIC_APP_DOMAIN"
             node scripts/generate-farcaster-account-association.js generate
       - name: "🎨 Generate SVG icons with gradients"
+        env:
+            NEXT_PUBLIC_APP_DOMAIN: ${{ steps.cleanup-projects.outputs.existing_project_name }}.vercel.app
         run: |
           # Export domain URLs for SVG icon generation
             
