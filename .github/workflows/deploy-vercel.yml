@@ -164,7 +164,7 @@ jobs:
       
       - name: "🔑 Generate Farcaster account association"
         env:
-            NEXT_PUBLIC_APP_DOMAIN: ${{ steps.cleanup-projects.outputs.existing_project_name }}.vercel.app
+            NEXT_PUBLIC_APP_DOMAIN: https://${{ steps.cleanup-projects.outputs.existing_project_name }}.vercel.app
             FARCASTER_FID: ${{ secrets.FARCASTER_FID }}
             FARCASTER_CUSTODY_ADDRESS: ${{ secrets.FARCASTER_CUSTODY_ADDRESS }}
             FARCASTER_CUSTODY_PRIVATE_KEY: ${{ secrets.FARCASTER_CUSTODY_PRIVATE_KEY }}
