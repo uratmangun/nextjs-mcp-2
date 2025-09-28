@@ -23,7 +23,7 @@ export default function Home() {
     {
       id: 'create',
       title: '1. Create a new repository from this template',
-      command: 'gh repo create your-new-repo --template uratmangun/nextjs-mcp --public --clone',
+      command: 'gh repo create your-new-repo --template uratmangun/nextjs-mcp-2 --public --clone',
       description: 'Creates a new public repository using this as a template and clones it locally'
     },
     {
