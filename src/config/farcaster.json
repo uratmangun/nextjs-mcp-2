@@ -6,22 +6,22 @@
   },
   "miniapp": {
     "version": "1",
-    "name": "Developer Resume AI Creator",
-    "iconUrl": "https://8468d4091961.ngrok-free.app/images/gemini-icon-2025-09-06T00-34-02-323Z_0.png",
-    "homeUrl": "https://8468d4091961.ngrok-free.app",
-    "imageUrl": "https://8468d4091961.ngrok-free.app/images/screenshot-embed-2025-09-02T05-37-57-650Z.png",
+    "name": "Next.js MCP Template",
+    "iconUrl": "https://your-domain.ngrok-free.app/images/icon.png",
+    "homeUrl": "https://your-domain.ngrok-free.app",
+    "imageUrl": "https://your-domain.ngrok-free.app/images/screenshot.png",
     "buttonTitle": "Launch App",
-    "splashImageUrl": "https://8468d4091961.ngrok-free.app/images/gemini-splash-2025-09-06T00-34-02-489Z.png",
+    "splashImageUrl": "https://your-domain.ngrok-free.app/images/splash.png",
     "splashBackgroundColor": "#0ea5e9",
-    "webhookUrl": "https://8468d4091961.ngrok-free.app/api/webhook",
-    "subtitle": "Purpose-built to create minimal resumes for software developers only",
-    "description": "Purpose-built to create minimal resumes for software developers only",
-    "primaryCategory": "productivity",
+    "webhookUrl": "https://your-domain.ngrok-free.app/api/webhook",
+    "subtitle": "MCP integration template for Next.js applications",
+    "description": "Template for integrating MCP (Model Context Protocol) with Next.js applications, enabling AI assistants to interact with your web apps through standardized tools and resources.",
+    "primaryCategory": "developer",
     "tags": [
-      "nextjs",
-      "farcaster",
-      "web3",
-      "cloudflare"
+      "react",
+      "typescript",
+      "ai",
+      "mcp"
     ]
   }
 }
