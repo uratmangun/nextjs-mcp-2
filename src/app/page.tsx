@@ -19,6 +19,14 @@ export default function Home() {
     setTimeout(() => setCopied(null), 2000);
   };
 
+  const copyMcpUrl = async () => {
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
+    const mcpUrl = `${baseUrl}/mcp`;
+    await navigator.clipboard.writeText(mcpUrl);
+    setCopied('mcp-url');
+    setTimeout(() => setCopied(null), 2000);
+  };
+
   const commands = [
     {
       id: 'create',
@@ -51,6 +59,34 @@ export default function Home() {
             Use this to create your next Next.js MCP apps
           </p>
         </header>
+
+        <section className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg p-8 mb-6">
+          <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-4">
+            Connect to MCP
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300 mb-4">
+            Use this URL to connect :
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <input
+              type="text"
+              readOnly
+              value={typeof window !== 'undefined' ? `${window.location.origin}/mcp` : ''}
+              className="flex-1 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 px-4 py-2 text-slate-800 dark:text-slate-100 font-mono text-sm"
+            />
+            <button
+              type="button"
+              onClick={copyMcpUrl}
+              className="inline-flex items-center justify-center rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-400"
+              title="Copy to clipboard"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              {copied === 'mcp-url' ? ' ✓ Copied!' : ' Copy'}
+            </button>
+          </div>
+        </section>
 
         <div className="space-y-6">
           {commands.map((cmd) => (
